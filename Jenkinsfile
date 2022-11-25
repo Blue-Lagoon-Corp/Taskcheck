@@ -11,7 +11,7 @@ pipeline {
                 steps {
                     dir('C:/ProgramData/Jenkins/.jenkins/workspace/Taskcheck'){
                         bat 'mvn clean verify sonar:sonar -Dsonar.login=634b3180737f5b08ef57317c4263be4fa13370cf -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=les-chomeurs -Dsonar.projectKey=Les-chomeurs_Taskcheck'
-
+                    }
                 }
             }
         stage('Compile'){
