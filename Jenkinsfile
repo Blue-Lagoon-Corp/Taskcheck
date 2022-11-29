@@ -39,6 +39,12 @@ pipeline {
             steps{
                 dir('C:/ProgramData/Jenkins/.jenkins/workspace/Taskcheck'){
                     bat './mvnw package'
+                }
+            }
+        }
+        stage('Archive') {
+            steps {
+                dir('C:/ProgramData/Jenkins/.jenkins/workspace/Taskcheck'){
                     bat 'rename target\\taskcheck-0.0.1-SNAPSHOT.jar taskcheck-%BUILD_NUMBER%.jar'
                     archiveArtifacts artifacts: 'target\\taskcheck-*.jar', followSymlinks: false
                 }
